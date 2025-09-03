@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "../ui/button"
-import { ArrowRight, Package, Globe, Truck } from "lucide-react"
+import { ArrowRight, Package, Globe, Truck, Plane } from "lucide-react"
 
 export default function HeroSection() {
   return (
@@ -41,8 +41,6 @@ export default function HeroSection() {
 
             <p className="text-lg text-gray-600 leading-relaxed">
               해외구매대행 · 배송대행 · 특송서비스 · 맞춤형 포장까지 원스톱으로
-              <br />
-              웨이하이 현지 창고와 전문 팀이 여러분의 비즈니스를 지원합니다.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -58,21 +56,6 @@ export default function HeroSection() {
                 </a>
               </Button>
             </div>
-
-            <div className="grid grid-cols-3 gap-4 pt-8">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">75,000원</div>
-                <div className="text-sm text-gray-600">CBM 특송요금</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">3-5일</div>
-                <div className="text-sm text-gray-600">배송 소요시간</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">24시간</div>
-                <div className="text-sm text-gray-600">실시간 대응</div>
-              </div>
-            </div>
           </motion.div>
 
           <motion.div
@@ -84,12 +67,12 @@ export default function HeroSection() {
             <div className="grid grid-cols-2 gap-4">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-2xl shadow-xl p-6 space-y-4"
+                className="bg-white rounded-2xl shadow-xl p-6 space-y-3 h-[160px]"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Package className="h-6 w-6 text-primary" />
+                  <Globe className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-lg">구매대행</h3>
+                <h3 className="font-semibold text-lg">해외구매대행</h3>
                 <p className="text-sm text-gray-600">
                   타오바오, 1688 등 중국 전 사이트 구매 대행
                 </p>
@@ -97,7 +80,7 @@ export default function HeroSection() {
 
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-2xl shadow-xl p-6 space-y-4 mt-8"
+                className="bg-white rounded-2xl shadow-xl p-6 space-y-3 h-[160px]"
               >
                 <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
                   <Truck className="h-6 w-6 text-accent" />
@@ -110,24 +93,27 @@ export default function HeroSection() {
 
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-2xl shadow-xl p-6 space-y-4"
+                className="bg-white rounded-2xl shadow-xl p-6 space-y-3 h-[160px]"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <Globe className="h-6 w-6 text-primary" />
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <Plane className="h-6 w-6 text-blue-600" />
                 </div>
-                <h3 className="font-semibold text-lg">통관대행</h3>
+                <h3 className="font-semibold text-lg">특송서비스</h3>
                 <p className="text-sm text-gray-600">
-                  빠르고 안전한 정식 통관 처리
+                  웨이하이-한국 직항 3-5일 초스피드 배송
                 </p>
               </motion.div>
 
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="bg-gradient-to-br from-primary to-blue-600 text-white rounded-2xl shadow-xl p-6 space-y-4 mt-8"
+                className="bg-white rounded-2xl shadow-xl p-6 space-y-3 h-[160px]"
               >
-                <h3 className="font-semibold text-lg">맞춤형 3PL</h3>
-                <p className="text-sm">
-                  OEM/ODM, 조립, 포장 등 맞춤 서비스
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                  <Package className="h-6 w-6 text-green-600" />
+                </div>
+                <h3 className="font-semibold text-lg">맞춤형 포장</h3>
+                <p className="text-sm text-gray-600">
+                  재포장, 선물포장, OEM 라벨링
                 </p>
               </motion.div>
             </div>
