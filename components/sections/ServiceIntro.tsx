@@ -41,8 +41,17 @@ const services = [
 
 export default function ServiceIntro() {
   return (
-    <section id="services" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-20 bg-gray-50 relative">
+      <div 
+        className="absolute inset-0 opacity-10 z-0"
+        style={{
+          backgroundImage: "url('/images/service-icons.png')",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}
+      />
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

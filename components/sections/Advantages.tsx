@@ -23,8 +23,17 @@ const advantages = [
 
 export default function Advantages() {
   return (
-    <section id="advantages" className="py-20 gradient-bg">
-      <div className="container mx-auto px-4">
+    <section id="advantages" className="py-20 gradient-bg relative">
+      <div 
+        className="absolute inset-0 opacity-20 z-0"
+        style={{
+          backgroundImage: "url('/images/advantages-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}
+      />
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

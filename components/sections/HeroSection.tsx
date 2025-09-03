@@ -6,10 +6,17 @@ import { ArrowRight, Package, Globe, Truck, Plane } from "lucide-react"
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center pt-16 gradient-bg overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url('/images/hero-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"></div>
       </div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">
@@ -24,22 +31,22 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full"
+              className="inline-flex items-center px-4 py-2 bg-accent/20 backdrop-blur-sm rounded-full"
             >
-              <span className="text-primary text-sm font-medium">
+              <span className="text-accent text-sm font-medium">
                 🚀 웨이하이-한국 직항 특송 서비스
               </span>
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
               중국에서 한국까지
-              <span className="text-gradient block mt-2">
+              <span className="text-accent block mt-2">
                 모든 직구와 수입을
               </span>
               한 번에
             </h1>
 
-            <p className="text-lg text-gray-600 leading-relaxed">
+            <p className="text-lg text-gray-200 leading-relaxed">
               해외구매대행 · 배송대행 · 특송서비스 · 맞춤형 포장까지 원스톱으로
             </p>
 

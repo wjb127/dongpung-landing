@@ -9,32 +9,18 @@ import {
 
 export default function CTASection() {
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-primary via-blue-600 to-primary relative overflow-hidden">
-      <div className="absolute inset-0 bg-black/10"></div>
-      
-      <motion.div
-        className="absolute -top-20 -right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
+    <section id="contact" className="py-20 relative overflow-hidden">
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url('/images/cta-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
         }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-        }}
-      />
-      
-      <motion.div
-        className="absolute -bottom-20 -left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.3, 0.6, 0.3],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-        }}
-      />
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-blue-600/85 to-primary/90"></div>
+      </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
