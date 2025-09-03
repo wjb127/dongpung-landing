@@ -26,16 +26,16 @@ export default function Header() {
 
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#services" className="text-gray-700 hover:text-primary transition-colors">
-              서비스
+              서비스 소개
+            </a>
+            <a href="#custom-services" className="text-gray-700 hover:text-primary transition-colors">
+              맞춤형 3PL
             </a>
             <a href="#advantages" className="text-gray-700 hover:text-primary transition-colors">
               강점
             </a>
             <a href="#process" className="text-gray-700 hover:text-primary transition-colors">
               이용방법
-            </a>
-            <a href="#custom-services" className="text-gray-700 hover:text-primary transition-colors">
-              맞춤서비스
             </a>
           </nav>
 
@@ -75,7 +75,14 @@ export default function Header() {
               className="text-gray-700 hover:text-primary transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              서비스
+              서비스 소개
+            </a>
+            <a
+              href="#custom-services"
+              className="text-gray-700 hover:text-primary transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              맞춤형 3PL
             </a>
             <a
               href="#advantages"
@@ -90,13 +97,6 @@ export default function Header() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               이용방법
-            </a>
-            <a
-              href="#custom-services"
-              className="text-gray-700 hover:text-primary transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              맞춤서비스
             </a>
             <div className="flex flex-col space-y-2 pt-4 border-t">
               <Button variant="outline" size="sm" asChild>
