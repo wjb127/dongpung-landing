@@ -10,9 +10,9 @@ export default function Home() {
     <>
       <HeroSection />
       <ServiceIntro />
+      <CustomServices />
       <Advantages />
       <ProcessFlow />
-      <CustomServices />
       <CTASection />
     </>
   )
