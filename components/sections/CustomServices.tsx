@@ -74,7 +74,7 @@ export default function CustomServices() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {customServices.map((service, index) => (
             <motion.div
               key={index}
@@ -85,21 +85,21 @@ export default function CustomServices() {
               whileHover={{ y: -5 }}
               className="group"
             >
-              <div className="relative h-full p-6 bg-white rounded-2xl border-2 border-gray-100 hover:border-primary/30 transition-all duration-300 overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 opacity-10">
+              <div className="relative h-full p-4 md:p-6 bg-white rounded-xl md:rounded-2xl border-2 border-gray-100 hover:border-primary/30 transition-all duration-300 overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 opacity-10">
                   <div className={`w-full h-full bg-gradient-to-br ${service.gradient} rounded-full blur-2xl`}></div>
                 </div>
                 
                 <div className="relative z-10">
-                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${service.gradient} mb-4`}>
-                    <service.icon className="h-6 w-6 text-white" />
+                  <div className={`inline-flex p-2.5 md:p-3 rounded-xl bg-gradient-to-br ${service.gradient} mb-3 md:mb-4`}>
+                    <service.icon className="h-5 w-5 md:h-6 md:w-6 text-white" />
                   </div>
                   
-                  <h3 className="text-xl font-semibold text-dark mb-2">
+                  <h3 className="text-base md:text-xl font-semibold text-dark mb-1.5 md:mb-2">
                     {service.title}
                   </h3>
                   
-                  <p className="text-gray-600">
+                  <p className="text-sm md:text-base text-gray-600">
                     {service.description}
                   </p>
                 </div>

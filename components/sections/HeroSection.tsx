@@ -40,7 +40,8 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              구매대행부터 배송, 통관까지 원스톱 솔루션!
+              해외구매대행 · 배송대행 · 특송서비스 · 맞춤형 포장까지 원스톱으로
+              <br />
               웨이하이 현지 창고와 전문 팀이 여러분의 비즈니스를 지원합니다.
             </p>
 
@@ -53,7 +54,7 @@ export default function HeroSection() {
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <a href="#services">
-                  서비스 둘러보기
+                  서비스 시작하기
                 </a>
               </Button>
             </div>
