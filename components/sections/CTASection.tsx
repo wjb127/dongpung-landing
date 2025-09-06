@@ -49,9 +49,12 @@ export default function CTASection() {
               size="xl" 
               variant="accent"
               className="group text-lg px-10 py-6 shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
+              asChild
             >
-              지금 견적 요청하기
-              <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <a href="#contact-form">
+                지금 견적 요청하기
+                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
 
             <Button 

@@ -52,7 +52,7 @@ export default function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" variant="accent" className="group" asChild>
-                <a href="#contact">
+                <a href="#contact-form">
                   견적 요청하기
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </a>

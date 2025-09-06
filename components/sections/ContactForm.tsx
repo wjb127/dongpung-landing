@@ -43,7 +43,7 @@ export default function ContactForm() {
   return (
     <section id="contact-form" className="py-20 bg-slate-900 relative overflow-hidden">
       <div 
-        className="absolute inset-0 opacity-40 z-0"
+        className="absolute inset-0 opacity-50 z-0"
         style={{
           backgroundImage: "url('/midjourney/u8164484915_modern_abstract_shipping_and_logistics_background_bc139c5d-a175-4dbb-a3a1-146622dc733e_2.png')",
           backgroundSize: "cover",
@@ -52,7 +52,7 @@ export default function ContactForm() {
           filter: "blur(2px)"
         }}
       />
-      <div className="absolute inset-0 bg-slate-900/70 z-0" />
+      <div className="absolute inset-0 bg-slate-900/50 z-0" />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
