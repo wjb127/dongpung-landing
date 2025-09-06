@@ -83,8 +83,8 @@ export default function ProcessFlow() {
                 <div className="bg-white rounded-xl p-4 hover:shadow-xl transition-all duration-300">
                   <div className="flex flex-col items-center text-center">
                     <motion.div
-                      whileHover={{ scale: 1.1, rotate: 360 }}
-                      transition={{ duration: 0.5 }}
+                      whileHover={{ scale: 1.15 }}
+                      transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
                       className={`w-20 h-20 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center mb-4 shadow-lg`}
                     >
                       <step.icon className="h-10 w-10 text-white" />
