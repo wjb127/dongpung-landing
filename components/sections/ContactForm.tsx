@@ -3,7 +3,8 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "../ui/button"
-import { Send } from "lucide-react"
+import { Send, CheckCircle } from "lucide-react"
+import { supabase } from "@/lib/supabase"
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -18,6 +19,8 @@ export default function ContactForm() {
     inquiryDetails: "",
     agreement: false
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target
@@ -34,10 +37,58 @@ export default function ContactForm() {
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log(formData)
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      const contactNumber = `${formData.contactNumber1}-${formData.contactNumber2}-${formData.contactNumber3}`
+      
+      const { error } = await supabase
+        .from('contact_inquiries')
+        .insert([
+          {
+            company_name: formData.companyName,
+            contact_person: formData.companyOrDepartment,
+            contact_number: contactNumber,
+            email: formData.email || null,
+            consultation_time: formData.productLink || null,
+            inquiry_details: formData.inquiryDetails,
+            agreement: formData.agreement
+          }
+        ])
+
+      if (error) throw error
+
+      setSubmitStatus('success')
+      // Reset form
+      setFormData({
+        companyName: "",
+        companyOrDepartment: "",
+        contactPerson: "",
+        contactNumber1: "",
+        contactNumber2: "",
+        contactNumber3: "",
+        email: "",
+        productLink: "",
+        inquiryDetails: "",
+        agreement: false
+      })
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle')
+      }, 5000)
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setSubmitStatus('error')
+      setTimeout(() => {
+        setSubmitStatus('idle')
+      }, 5000)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -221,10 +272,38 @@ export default function ContactForm() {
               type="submit"
               size="lg"
               className="w-full bg-accent hover:bg-accent/90 text-white font-bold py-4 text-lg group"
+              disabled={isSubmitting}
             >
-              무료 상담 신청하기
-              <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              {isSubmitting ? (
+                <>처리 중...</>
+              ) : (
+                <>
+                  무료 상담 신청하기
+                  <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </>
+              )}
             </Button>
+
+            {submitStatus === 'success' && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="flex items-center justify-center gap-2 text-green-400 bg-green-400/10 rounded-lg p-3"
+              >
+                <CheckCircle className="h-5 w-5" />
+                <span>신청이 완료되었습니다. 곧 연락드리겠습니다!</span>
+              </motion.div>
+            )}
+
+            {submitStatus === 'error' && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-center text-red-400 bg-red-400/10 rounded-lg p-3"
+              >
+                신청 중 오류가 발생했습니다. 다시 시도해주세요.
+              </motion.div>
+            )}
           </form>
         </motion.div>
       </div>
