@@ -4,6 +4,7 @@ import CustomServices from '@/components/sections/CustomServices'
 import Advantages from '@/components/sections/Advantages'
 import ProcessFlow from '@/components/sections/ProcessFlow'
 import CTASection from '@/components/sections/CTASection'
+import ContactForm from '@/components/sections/ContactForm'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Advantages />
       <ProcessFlow />
       <CTASection />
+      <ContactForm />
     </>
   )
 }
