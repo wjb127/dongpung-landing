@@ -47,7 +47,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-lg text-gray-200 leading-relaxed">
-              해외구매대행 · 배송대행 · 특송서비스 · 맞춤형 포장까지 원스톱으로
+              해외구매대행 · 맞춤형 배송대행 · 특송서비스 · 쿠팡 풀필먼트까지 원스톱으로
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -90,11 +90,11 @@ export default function HeroSection() {
                 className="bg-white rounded-2xl shadow-xl p-6 space-y-3 h-[160px]"
               >
                 <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
-                  <Truck className="h-6 w-6 text-accent" />
+                  <Package className="h-6 w-6 text-accent" />
                 </div>
-                <h3 className="font-semibold text-lg">배송대행</h3>
+                <h3 className="font-semibold text-lg">맞춤형 배송대행</h3>
                 <p className="text-sm text-gray-600">
-                  검수, 재포장, 라벨링 등 전문 서비스
+                  검수·재포장·OPP/박스 맞춤 포장
                 </p>
               </motion.div>
 
@@ -116,11 +116,11 @@ export default function HeroSection() {
                 className="bg-white rounded-2xl shadow-xl p-6 space-y-3 h-[160px]"
               >
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                  <Package className="h-6 w-6 text-green-600" />
+                  <Truck className="h-6 w-6 text-green-600" />
                 </div>
-                <h3 className="font-semibold text-lg">맞춤형 포장</h3>
+                <h3 className="font-semibold text-lg">쿠팡 밀크런/로켓그로스</h3>
                 <p className="text-sm text-gray-600">
-                  재포장, 선물포장, OEM 라벨링
+                  쿠팡 풀필먼트 및 로켓배송 연동
                 </p>
               </motion.div>
             </div>

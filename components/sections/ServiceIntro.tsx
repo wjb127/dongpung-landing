@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui/card"
-import { ShoppingCart, Package, Plane, CheckCircle } from "lucide-react"
+import { ShoppingCart, Package, Plane, Truck } from "lucide-react"
 
 const services = [
   {
@@ -17,7 +17,7 @@ const services = [
   },
   {
     icon: Package,
-    title: "배송대행",
+    title: "맞춤형 배송대행",
     features: [
       "• DF-FORWARDER 전용 창고 입고 후 검수·재포장",
       "• 파손·불량·수량 불일치 시 사진/보고서 제공",
@@ -36,6 +36,17 @@ const services = [
     ],
     color: "text-blue-600",
     bgColor: "bg-blue-100",
+  },
+  {
+    icon: Truck,
+    title: "쿠팡 밀크런 & 로켓그로스",
+    features: [
+      "• 밀크런: 쿠팡이 직접 방문 수거하는 집배송형 물류 서비스",
+      "• 로켓그로스: 재고보관→포장→배송→반품까지 풀필먼트 일괄 처리",
+      "• 로켓배송 자동 연동으로 상위노출 및 판매 증대 효과",
+    ],
+    color: "text-green-600",
+    bgColor: "bg-green-100",
   },
 ]
 
@@ -67,7 +78,7 @@ export default function ServiceIntro() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
