@@ -19,6 +19,10 @@ const advantages = [
     emoji: "✅",
     title: "소량 샘플부터 대량 수입까지 유연한 지원",
   },
+  {
+    emoji: "🚀",
+    title: "쿠팡 밀크런 정기 수거 + 로켓그로스 풀필먼트 전문 운영",
+  },
 ]
 
 export default function Advantages() {
@@ -42,7 +46,7 @@ export default function Advantages() {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">
-            강점
+            동풍만의 장점
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Why 동풍직구?
